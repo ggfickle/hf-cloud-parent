@@ -33,6 +33,10 @@
         <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
         <querydsl.version>5.0.0</querydsl.version>
         <nacos-client.version>2.2.2</nacos-client.version>
+		<micrometer.version>1.10.3</micrometer.version>
+        <micrometer-tracing.version>1.0.1</micrometer-tracing.version>
+        <skywalking-agent.version>8.15.0</skywalking-agent.version>
+        <dubbo-metrics-api-version>3.2.0</dubbo-metrics-api-version>
     </properties>
 
     <dependencyManagement>
@@ -169,6 +173,30 @@
                 <artifactId>arthas-spring-boot-starter</artifactId>
                 <version>3.6.7</version>
                 <scope>runtime</scope>
+            </dependency>
+			<dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-bom</artifactId>
+                <version>${micrometer.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bom</artifactId>
+                <version>${micrometer-tracing.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-metrics-api</artifactId>
+                <version>${dubbo-metrics-api-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-micrometer-1.10</artifactId>
+                <version>${skywalking-agent.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
