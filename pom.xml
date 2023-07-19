@@ -29,15 +29,11 @@
         <hutool.version>5.8.0.M3</hutool.version>
         <rocketmq-springboot.version>2.2.0</rocketmq-springboot.version>
         <mybatis.version>2.1.4</mybatis.version>
-        <dubbo.version>3.1.9</dubbo.version>
+        <dubbo.version>3.1.10</dubbo.version>
         <curator.version>5.4.0</curator.version>
         <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
         <querydsl.version>5.0.0</querydsl.version>
         <nacos-client.version>2.2.2</nacos-client.version>
-		<micrometer.version>1.10.3</micrometer.version>
-        <micrometer-tracing.version>1.0.1</micrometer-tracing.version>
-        <skywalking-agent.version>8.15.0</skywalking-agent.version>
-        <dubbo-metrics-api-version>3.2.0</dubbo-metrics-api-version>
     </properties>
 
     <dependencyManagement>
@@ -96,43 +92,24 @@
                 <version>${mybatis.version}</version>
             </dependency>
 
-
+            <!-- Dubbo -->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-dependencies-bom</artifactId>
+                <artifactId>dubbo-bom</artifactId>
                 <version>${dubbo.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo</artifactId>
+                <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
                 <version>${dubbo.version}</version>
+                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>${dubbo.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-registry-zookeeper</artifactId>
-                <version>${dubbo.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-framework</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-recipes</artifactId>
-                <version>${curator.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.curator</groupId>
-                <artifactId>curator-client</artifactId>
-                <version>${curator.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
@@ -168,36 +145,6 @@
                 <groupId>com.querydsl</groupId>
                 <artifactId>querydsl-core</artifactId>
                 <version>${querydsl.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.taobao.arthas</groupId>
-                <artifactId>arthas-spring-boot-starter</artifactId>
-                <version>3.6.7</version>
-                <scope>runtime</scope>
-            </dependency>
-			<dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-bom</artifactId>
-                <version>${micrometer.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.micrometer</groupId>
-                <artifactId>micrometer-tracing-bom</artifactId>
-                <version>${micrometer-tracing.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-metrics-api</artifactId>
-                <version>${dubbo-metrics-api-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.skywalking</groupId>
-                <artifactId>apm-toolkit-micrometer-1.10</artifactId>
-                <version>${skywalking-agent.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
