@@ -6,7 +6,7 @@
 
     <groupId>com.hf.cloud</groupId>
     <artifactId>hf-cloud-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -35,6 +35,8 @@
         <querydsl.version>5.0.0</querydsl.version>
         <nacos-client.version>2.2.2</nacos-client.version>
         <mysql-connector-j.version>8.0.33</mysql-connector-j.version>
+        <druid.version>1.2.18</druid.version>
+        <redisson.version>3.17.0</redisson.version>
     </properties>
 
     <dependencyManagement>
@@ -156,6 +158,16 @@
                 <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector-j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
